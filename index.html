@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>練習</title>
+<link rel="stylesheet" href="css/dophp.css">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+
+    <ul class="menu">
+      <li><a href="#" class="active" data-id="about">サイトの概要</a></li>
+      <li><a href="#" data-id="service">サービス内容</a></li>
+      <li><a href="#" data-id="phone">お問い合わせ</a></li>
+    </ul>
+
+    <section class="content active" id="about">
+      サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。サイトの概要。
+    </section>
+
+    <section class="content" id="service">
+      サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。サービス内容。
+    </section>
+
+    <section class="content" id="phone">
+      ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。ご連絡先。
+    </section>
+
+  </div>
+
+
+  <hr>
+
+  <header>
+
+    
+
+
+    <div class="logo">
+      <h1>LOGO</h1>
+    </div>
+
+    <div class="pc-menu">
+
+      <!-- <span class="material-icons" id="close">close</span> -->
+  
+      <nav>
+        <ul>
+          <li><a href="#">menu</a></li>
+          <li><a href="#">menu</a></li>
+          <li><a href="#">menu</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="sp-menu">
+      <span class="material-icons" id="open">list</span>
+    </div>
+
+  </header>
+
+
+  <div class="overlay">
+
+    <span class="material-icons" id="close">close</span>
+
+    <nav>
+      <ul>
+        <li><a href="#">menu</a></li>
+        <li><a href="#">menu</a></li>
+        <li><a href="#">menu</a></li>
+      </ul>
+    </nav>
+  </div>
+
+
+  <!-- src="js/dophp.js" -->
+
+
+  <script> 
+  
+
+  const overall = document.querySelectorAll('.menu li a');
+  const contents = document.querySelectorAll('.content');
+
+  overall.forEach(one => {
+    one.addEventListener('click', e => {
+      e.preventDefault();
+
+      overall.forEach(one => {
+        one.classList.remove('active');
+      });
+
+      contents.forEach(content => {
+        content.classList.remove('active');
+      });
+
+      document.getElementById(one.dataset.id).classList.add('active');
+
+
+      one.classList.add('active');
+    });
+  });
+
+
+
+  const open = document.getElementById('open');
+  const overlay = document.querySelector('.overlay');
+  const close = document.getElementById('close');
+
+  open.addEventListener('click', function() {
+    overlay.classList.add('show');
+    open.classList.add('hide');
+  });
+
+
+  close.addEventListener('click', function () {
+    overlay.classList.remove('show');
+    open.classList.remove('hide');
+  });
+
+
+
+
+  </script>
+
+</body>
+
+</html>
